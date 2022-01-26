@@ -1,0 +1,52 @@
+using System;
+
+namespace TrueOrFalse
+{
+  class Program
+  {
+		static void Main(string[] args)
+    {
+      Console.WriteLine("Welcome to 'True or False?'\nPress Enter to begin:");
+      string entry = Console.ReadLine();
+      Tools.SetUpInputStream(entry);
+
+    string[] questions = new string[]{"Regula de cinci secunde - ridica mancarea de pe jos", "Cameleonii îşi schimbă culoarea pielii pentru a se camufla", "Fulgerul loveşte de două ori în acelaşi loc"};
+    bool[] answers = new bool[]{false, false, true};
+    bool[] responses = new bool[questions.Length];
+      if(questions.Length != answers.Length){
+        Console.WriteLine("Question si answers nu au acelasi numar de input uri");
+      }
+        int askingIndex = 0;
+        foreach (string question in questions)
+        {
+            string input;
+            bool isBool;
+            bool inputBool;
+            Console.WriteLine($"{question}. True or False?");
+            input = Console.ReadLine();
+            isBool = Boolean.TryParse(input, out inputBool);
+            while(isBool == false){
+              Console.WriteLine("Please respond with 'true' or 'false'.");
+              input = Console.ReadLine();
+              isBool = Boolean.TryParse(input, out inputBool);
+            }
+            responses[askingIndex] = inputBool;
+            askingIndex++;
+        }
+      // foreach(bool response in responses){
+      //   Console.WriteLine(response);
+      // }
+      int scoringIndex = 0;
+      int score = 0;
+      foreach(bool answer in answers){
+        bool response = responses[scoringIndex];
+        Console.WriteLine($"{scoringIndex + 1}. Input: {response} | Answer: {answer}");
+        if(response == answer){
+          score++;
+        }
+        scoringIndex++;
+      }
+      Console.WriteLine($"\nAi raspuns corect la {score} afirmatii din {questions.Length}.");
+    }
+  }
+}

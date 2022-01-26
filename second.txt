@@ -1,0 +1,57 @@
+using System;
+
+namespace MadLibs
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      /*
+      This program 
+      Author: jesuisBogdan
+      */
+
+
+      // Let the user know that the program is starting:
+
+
+      // Give the Mad Lib a title:
+      string title = "Play along bro";
+
+      Console.WriteLine(title);
+      Console.WriteLine("\n");
+      // Define user input and variables:
+Console.WriteLine("Enter a name: ");
+string name = Console.ReadLine();
+Console.WriteLine("Please write 3 adjectives. First one:");
+string adj1 = Console.ReadLine();
+Console.WriteLine("Please write 3 adjectives. Second one:");
+string adj2 = Console.ReadLine();
+Console.WriteLine("Please write 3 adjectives. Third one:");
+string adj3 = Console.ReadLine();
+Console.WriteLine("Please write one verb:");
+string verb = Console.ReadLine();
+Console.WriteLine("Please write two nouns: First one:");
+string noun1 = Console.ReadLine();
+Console.WriteLine("Second noun:");
+string noun2 = Console.ReadLine();
+Console.WriteLine("Please write an animal, a food, a fruit, a superhero, a country, a dessert, a year separeted by ENTER");
+string animal = Console.ReadLine();
+string food = Console.ReadLine();
+string fruit = Console.ReadLine();
+string superhero = Console.ReadLine();
+string country = Console.ReadLine();
+string dessert = Console.ReadLine();
+string year = Console.ReadLine();
+
+
+      // The template for the story:
+Console.WriteLine("Let the game begin!");
+      string story = $"This morning {name} woke up feeling {adj1}. 'It is going to be a {adj2}day!' Outside, a bunch of {animal}s were protesting to keep{food}in stores. They began to {verb} to the rhythm of the {noun1}, which made all the {fruit}s very {adj3}. Concerned, {name} texted {superhero}, who flew {name} to {country} and dropped {name} in a puddle of frozen {dessert}. {name} woke up in the year {year}, in a world where {noun2}s ruled the world.";
+
+
+      // Print the story:
+Console.WriteLine(story);
+    }
+  }
+}

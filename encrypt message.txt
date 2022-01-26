@@ -1,0 +1,25 @@
+using System;
+
+namespace CaesarCipher
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      char[] alphabet = new char[] {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+      Console.Write("Input your secret message here: ");
+      string message = Console.ReadLine();
+      char[] secretMessage = message.ToCharArray();
+      char[] ecryptedMessage = new char[secretMessage.Length];
+      for(int i = 0; i < secretMessage.Length; i++){
+        char pos = secretMessage[i];
+        int position = Array.IndexOf(alphabet, pos);
+        int position3 = (position + 3) % 26;
+        char encrip = alphabet[position3];
+        secretMessage[i] = encrip;
+      }
+      string finalString = String.Join("", secretMessage);
+      Console.WriteLine(finalString);
+    }
+  }
+}

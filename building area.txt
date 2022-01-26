@@ -1,0 +1,26 @@
+using System;
+
+namespace ArchitectArithmetic
+{
+  class Program
+  {
+    public static void Main(string[] args)
+    {
+double area = rectangle(1500, 2500) + triangle(500, 750) + circle(375);
+double cost = area * 180;
+double costRound = Math.Round(cost, 2);
+Console.WriteLine($"Total area is {area}. Given the average price of 180, your grand total will be {costRound} Mexican pesos");
+// double circleArea = circle(375);
+// double triangleArea = triangle(500, 750);
+    }
+    static double rectangle(double length, double width){
+      return length * width;
+    }
+    static double circle(double radius){
+      return Math.PI * Math.Pow(radius, 2);
+    }
+    static double triangle(double bottom, double height){
+      return 0.5 * bottom * height;
+    }
+  }
+}
